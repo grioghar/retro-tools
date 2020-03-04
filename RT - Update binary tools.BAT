@@ -1,0 +1,1 @@
+REM using local tools, download chdman, ffmpeg, and anything else needed
