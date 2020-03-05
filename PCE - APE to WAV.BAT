@@ -4,7 +4,7 @@ REM Later versions of this will also delete the .ape files, though it will give 
 
 
 :: This line sets the variable of where the folder with the ROMs are. 
-set pcenginecdpath="V:\PCE torrent\"
+set pcenginecdpath="F:\folder"
 :: Runs FOR loop through every file and sub-folder, looking for .ape file.
 :: Converts the .ape file to .wav, leaving the .ape file (for now). 
 for /r %pcenginecdpath% %%i in (*.ape) do ffmpeg.exe -y -i "%%i" "%%~ni.wav"
