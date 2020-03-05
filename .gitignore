@@ -1,2 +1,4 @@
 
 ffmpeg.exe
+.wget-hsts
+*.exe
