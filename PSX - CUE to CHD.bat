@@ -1,5 +1,5 @@
 REM for /r %%i in (*.cue, *.gdi) do chdman.exe createcd -i "%%i" -o "%%~ni.chd" --force
-REMtimeout /t 10
+REM timeout /t 10
 
 FOR /r %%i IN (*.cue, *.gdi) DO (
 
