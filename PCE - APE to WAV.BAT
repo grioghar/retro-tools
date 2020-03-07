@@ -15,18 +15,40 @@ set "p="
 	echo --       PC Engine / TurboGraphix 16       --
 	echo --             .APE ^=^> .WAV                --
 	echo --               Converter                 --
-	set /p p=-- ROM location[%1] or e^(x^)it: 
+	echo -- ROMs location - %1 
+	set /p p=^(c^)onvert, ^(d^)elete .wavs, or e^(x^)it: 
 
-	if "%p%" == "" ( 
-		set roms=%1 
-	) else ( 
-		set roms=%p% 
+	if "%p%" == "d" (
+		goto deletethewavs
+		)
+	if "%p%" == "x" (
+		goto :EOF
+		)
+	if "%p%" == "c" ( 
+		set roms=%1
+		goto dothedancefandango	
+	) 
+	
+:dothedancefandango 
+	for /r %roms% %%i in (*.ape) do (
+		if exist "%%~dpi%%~ni.wav" (
+		echo "file exists"
+	) else (
+		ffmpeg.exe -y -i "%%i" "%%~dpi%%~ni.wav"
+		)
+	)
+
+	goto main
+	
+:deletethewavs
+	for /r %roms% %%i in (*.ape) do (
+		if exist "%%~dpi%%~ni.wav" (
+			del "%%~dpi%%~ni.wav"
+			echo "Deleting %%~dpi%%~ni.wav..."
+			timeout 1
+	) else ( echo "Checking %%~dpi..." )
 	)
 	
-	goto dothedancefandango
-
-:dothedancefandango 
-	for /r %roms% %%i in (*.ape) do ffmpeg.exe -y -i "%%i" "%%~dpi%%~ni.wav"
-	goto main	
+	goto main
 	
 	
