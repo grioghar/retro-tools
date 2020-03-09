@@ -15,11 +15,7 @@ for /r %~dp0 %%l in (*.log) do (
 	)
 
 if %s% == 1 (
-<<<<<<< Updated upstream
-	%~0 %1 2>&1 | wtee "%~n0 - %logcount%.log"
-=======
 	%~0 %1 2>&1 | wtee "logs\%~n0 %logcount%.log"
->>>>>>> Stashed changes
 		)
 	
 :main 

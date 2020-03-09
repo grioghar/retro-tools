@@ -1,14 +1,23 @@
+@echo off
 REM for /r %%i in (*.cue, *.gdi) do chdman.exe createcd -i "%%i" -o "%%~ni.chd" --force
-REMtimeout /t 10
+REM timeout /t 10
 
-for /r %1 %%z IN (*.7z, *.zip) DO ( 
-	7z x "%%z" -o%1
-	FOR /r %%i IN (*.cue, *.gdi) DO (
-		if exist "R:\psx\%%~ni.chd" (
+set "PATH=%PATH%;C:\Program Files\7-Zip\"
+set rpie=R:\psx
+set rompath=%1
+
+::set rompath=%rompath:"=%
+for /r %1 %%z in (*.7z, *.zip, *.rar) DO ( 
+	if exist "%rpie%\%%~nz.chd" (
 		rem file exists
 		) else (
-		chdman.exe createcd -i "%%i" -o "%%~ni.chd" --force
-	    move /y "%%~ni.chd" R:\psx
+		7z x -y "%%z" -o%1
+		chdman.exe createcd -i "%rompath:"=%\%%~nz.cue" -o "%rompath:"=%\%%~nz.chd" --force
+		echo Copying %%~nz.chd to %rpie%  
+		move /y "%rompath:"=%\%%~nz.chd" %rpie%
+			
+		del "%rompath:"=%\%%~nz.cue"
+		del "%rompath:"=%\%%~nz.bin"
 		)
-	)	
-)
+	)
+

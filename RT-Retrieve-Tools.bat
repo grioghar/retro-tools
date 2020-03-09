@@ -46,10 +46,8 @@ if exist 7z1900-x64.exe (
 		wget.exe https://www.7-zip.org/a/7z1900-x64.exe
 		echo Installing 7-zip silently ^(UAC will still activate^)
 		start /wait 7z1900-x64.exe /S
-		:: Set PATH to make 7z referenceable
-		set "PATH=%PATH%;C:\Program Files\7-Zip\"
 		)
-
+set "PATH=%PATH%;C:\Program Files\7-Zip\"
 :: Download ffmpeg.zip, then extract it using 7zip CLI
 if exist ffmpeg.exe (
 	echo ffmpeg.exe already downloaded
@@ -66,6 +64,14 @@ if exist chdman.exe (
 		echo "Downloading & extracting chdman v5 from MAME download..."
 		wget.exe https://github.com/mamedev/mame/releases/download/mame0219/mame0219b_64bit.exe
 		7z e mame0219b_64bit.exe -o. chdman.exe -r
+		)
+
+:: Download 64-bit psftp.exe tp root directory
+if exist psftp.exe (
+	echo psftp.exe already downloaded
+	) else (
+		echo "Downloading psftp..."
+		wget.exe https://the.earth.li/~sgtatham/putty/latest/w64/psftp.exe
 		)
 		
 :: clean up your mess
