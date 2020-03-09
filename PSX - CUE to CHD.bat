@@ -7,13 +7,13 @@ set rompath=%1
 
 :: Handle compressed files
 for /r %1 %%z in (*.7z, *.zip, *.rar) DO ( 
-	if exist "%rpi%\%%~nz.chd" (
-		echo  %%~nz.chd exists on %rpi%
+	if exist "%rpipsx%\%%~nz.chd" (
+		echo  %%~nz.chd exists on %rpipsx%
 		) else (
 		7z x -y "%%z" -o%1
 		chdman.exe createcd -i "%rompath:"=%\%%~nz.cue" -o "%rompath:"=%\%%~nz.chd" --force
-		echo Copying %%~nz.chd to %rpi%  
-		move /y "%rompath:"=%\%%~nz.chd" %rpi%
+		echo Copying %%~nz.chd to %rpipsx%  
+		move /y "%rompath:"=%\%%~nz.chd" %rpipsx%
 			
 		del "%rompath:"=%\%%~nz.cue"
 		del "%rompath:"=%\%%~nz.bin"
@@ -22,11 +22,11 @@ for /r %1 %%z in (*.7z, *.zip, *.rar) DO (
 
 :: Handle uncompressed files
 for /r %1 %%z in (*.cue, *.iso) DO (
-	if exist "%rpi%\%%~nz.chd" (
-		 %%~nz.chd exists on %rpi%
+	if exist "%rpipsx%\%%~nz.chd" (
+		 %%~nz.chd exists on %rpipsx%
 		) else (
 		chdman.exe createcd -i "%rompath:"=%\%%~nz.cue" -o "%rompath:"=%\%%~nz.chd" --force
-		echo Copying %%~nz.chd to %rpi%  
-		move /y "%rompath:"=%\%%~nz.chd" %rpi%
+		echo Copying %%~nz.chd to %rpipsx%  
+		move /y "%rompath:"=%\%%~nz.chd" %rpipsx%
 		)
 	)
