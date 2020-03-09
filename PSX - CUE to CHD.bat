@@ -14,9 +14,10 @@ for /r %1 %%z in (*.7z, *.zip, *.rar) DO (
 		chdman.exe createcd -i "%rompath:"=%\%%~nz.cue" -o "%rompath:"=%\%%~nz.chd" --force
 		echo Copying %%~nz.chd to %rpipsx%  
 		move /y "%rompath:"=%\%%~nz.chd" %rpipsx%
-			
-		del "%rompath:"=%\%%~nz.cue"
-		del "%rompath:"=%\%%~nz.bin"
+			for /r %1 %%b in (*.cue, *.bin) DO (
+				del %%b
+				echo Deleted %%b
+			)	
 		)
 	)
 
