@@ -1,4 +1,4 @@
-!/bin/bash
+#!/usr/bin/env bash
 
 export DISPLAY=:0
-nohup emulationstation &
+(nohup emulationstation 2> /dev/null &)
