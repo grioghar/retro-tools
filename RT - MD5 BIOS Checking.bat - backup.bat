@@ -14,32 +14,33 @@ call conf\bios-checksums.bat
 set rpibios="\\10.0.0.20\bios"
 
 setlocal enableDelayedExpansion
-:naptimeends
+
 for /r %rpibios% %%f in (*.*) do (
+    :outerspace
     for /f %%B in ('crc32.exe "%%f"') do (
+        
         set crc32value=%%B
-        set filelocation=%%f
-        goto outerspace
+        set len=4
+        set i=0
+
+        :test
+        if !i! equ !len! goto outerspace 
+        
+        for /f "usebackq delims==. tokens=1-3" %%j in (`set dc[!i!]`) do (
+	        set dc=%%l
+            echo !crc32value!
+
+            if /I !dc!==!crc32value! (
+                echo "%%f" !crc32value!
+                echo !i!
+            )
+            
+            echo !i!
+            set /a i+=1
+            goto test
+        )
     )
-)    
-
-:outerspace
-for /f "usebackq delims==. tokens=1-3" %%j in (`set dc[!i!]`) do (
-    set len=4
-    set i=0
-    set dc=%%l
-    goto testthatshit
 )
-
-:testthatshit
-
-if /I !dc!==!crc32value! (
-    echo !filelocation! !crc32value!
-    echo !i!
-)
-goto naptimeends
-
-
 :: helloacm.com batch programming tutorials
 :: create arrays of structures in batch
 

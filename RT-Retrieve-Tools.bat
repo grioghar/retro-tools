@@ -69,6 +69,21 @@ if exist chdman.exe (
 		)
 
 :: Download 64-bit psftp.exe tp root directory
+if exist crc32.exe (
+	echo crc32.exe already downloaded
+	) else (
+		echo "Downloading crc32..."
+		wget.exe http://esrg.sourceforge.net/utils_win_up/md5sum/crc32.exe
+		)
+
+if exist md5.exe (
+	echo md5.exe already downloaded
+	) else (
+		echo "Downloading md5..."
+		wget.exe http://esrg.sourceforge.net/utils_win_up/md5sum/md5.exe
+		)
+
+:: Download 64-bit psftp.exe tp root directory
 if exist psftp.exe (
 	echo psftp.exe already downloaded
 	) else (

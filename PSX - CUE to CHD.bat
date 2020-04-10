@@ -3,7 +3,7 @@ REM for /r %%i in (*.cue, *.gdi) do chdman.exe createcd -i "%%i" -o "%%~ni.chd" 
 REM timeout /t 10
 
 setlocal enabledelayedexpansion
-call conf/config.bat
+call conf\config.bat
 set rompath=%1
 set "b="
 
