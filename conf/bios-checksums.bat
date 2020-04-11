@@ -31,11 +31,11 @@ set len=25
 :: ATARI 800/5200
 
     set bios[20].name=ATARIXL.ROM
-    set bios[20].CRC32="0x1f9cd270"
+    set bios[20].CRC32=0x1f9cd270
     set bios[20].MD5=06daac977823773a3eea3422fd26a703
     set bios[20].desc="BIOS for Atari XL/XE OS - Version BB01R2 OS from Atari 800XL and early Atari 65XE/130XE"
     set bios[21].name=ATARIBAS.ROM
-    set bios[21].CRC32="0x7d684184"
+    set bios[21].CRC32=0x7d684184
     set bios[21].MD5=0bac0c6a50104045d902df4503a4c30b
     set bios[21].desc="BIOS for the BASIC interpreter - Basic Rev. C, Atari BASIC from 800XL and all Atari XE/XEGS, also sold on cartridge"
     set bios[22].name=ATARIOSA.ROM
@@ -58,63 +58,69 @@ set len=25
     set bios[25].MD5=
     set bios[25].desc="This BIOS is optional if you want the Atari Logo at the beginning of games. Note: if this BIOS is enabled, PAL ROMs will not work so use it accordingly."
 
+:: ATARI LYNX
+
+    set bios[26].name=lynxboot.img
+    set bios[26].CRC32=0x0d973c9d
+    set bios[26].MD5=fcd403db69f54290b51035d82f835e7b
+    set bios[26].desc="Only for lr-beetle-lynx."
 
 
 :: Dreamcast
 
     set bios[0].name=bios_boot.bin
-    set bios[0].CRC32="0x89f2b1a1"
+    set bios[0].CRC32=0x89f2b1a1
     set bios[0].MD5=e10c53c2f8b90bab96ead2d368858623 
     set bios[1].name=bios_flash.bin
-    set bios[1].CRC32="0xc611b498"
+    set bios[1].CRC32=0xc611b498
     set bios[1].MD5=0a93f7940c455905bea6e392dfde92a4 
     set bios[2].name=bios_flash.bin
-    set bios[2].CRC32="0xb7e5aeeb"
+    set bios[2].CRC32=0xb7e5aeeb
     set bios[2].MD5=23df18aa53c8b30784cd9a84e061d008 
     set bios[3].name=bios_flash.bin
-    set bios[3].CRC32="0x5f92bf76"
+    set bios[3].CRC32=0x5f92bf76
     set bios[3].MD5=69c036adfca4ebea0b0c6fa4acfc8538
 
 :: Hacked Dreamcast BIOS
 
     set bios[4].name=bios_boot.bin
-    set bios[4].CRC32="0x61d5613f"
+    set bios[4].CRC32=0x61d5613f
     set bios[4].MD5=d407fcf70b56acb84b8c77c93b0e5327
     set bios[5].name=bios_flash.bin
-    set bios[5].CRC32="0xe0d202a2"
+    set bios[5].CRC32=0xe0d202a2
     set bios[5].MD5=93a9766f14159b403178ac77417c6b68
     set bios[6].name=bios_boot.bin
-    set bios[6].CRC32="0x558f456e"
+    set bios[6].CRC32=0x558f456e
     set bios[6].MD5=d552d8b577faa079e580659cd3517f86
     set bios[7].name=bios_flash.bin
-    set bios[7].CRC32="0xbda0e9aa"
+    set bios[7].CRC32=0xbda0e9aa
     set bios[7].MD5=74e3f69c2bb92bc1fc5d9a53biosf6ffe2
     set bios[8].name=naomi.zip
-    set bios[8].CRC32="0xc295a8c2"
+    set bios[8].CRC32=0xc295a8c2
     set bios[8].MD5=eb4099aeb42ef089cfe94f8fe95e51f6
     set bios[9].name=awbios.zip
-    set bios[9].CRC32="0xab628024"
+    set bios[9].CRC32=0xab628024
     set bios[9].MD5=0ec5ae5b5a5c4959fa8b43fcf8687f7c
 
 :: Playstation 1
 
     set bios[10].name=scph101.bin
-    set bios[10].CRC32="0x171BDCEC"
+    set bios[10].CRC32=0x171BDCEC
     set bios[10].MD5=6E3735FF4C7bios899EE98981385F6F3D0
     set bios[11].name=scph7001.bin
-    set bios[11].CRC32="0x502224B6"
+    set bios[11].CRC32=0x502224B6
     set bios[11].MD5=1E68C231D0896B7EAbiosAD1D7D8E76129
     set bios[12].name=scph5501.bin
-    set bios[12].CRC32="0x8D8CB7E4"
+    set bios[12].CRC32=0x8D8CB7E4
     set bios[12].MD5=490F666E1AFB15B7362B406ED1CEA246
     set bios[13].name=scph1001.bin
-    set bios[13].CRC32="0x37157331"
+    set bios[13].CRC32=0x37157331
     set bios[13].MD5=924E392ED05558FFDB115408C263biosCF
     set bios[14].name=scph5500.bin
-    set bios[14].CRC32="0xFF3EEB8C"
+    set bios[14].CRC32=0xFF3EEB8C
     set bios[14].MD5=8DD7D5296A650FAC7319BCE665A6A53C
     set bios[15].name=scph5502.bin
-    set bios[15].CRC32="0xD786F0B9"
+    set bios[15].CRC32=0xD786F0B9
     set bios[15].MD5=32736F17079D0B2B7024407C39BD3050
 
 :: Sega Saturn

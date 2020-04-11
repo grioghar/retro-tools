@@ -11,7 +11,7 @@ setlocal enableDelayedExpansion
 if %i% equ %len% goto :eof
 
 for /F "usebackq delims==. tokens=1-3" %%j in (`set bios[!i!]`) do (
-    set %%k!i!=%%l
+    set %%k!i!="%%l"
 
     for /r %rpibios% %%f in (*.*) do (
         for /f %%B in ('crc32.exe "%%f"') do (
