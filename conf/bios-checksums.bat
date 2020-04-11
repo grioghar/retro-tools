@@ -5,7 +5,7 @@
 
 :: Global
 set i=0
-set len=19
+set len=25
 
 :: 3DO
 
@@ -30,33 +30,33 @@ set len=19
 
 :: ATARI 800/5200
 
-    set bios[16].name=ATARIXL.ROM
-    set bios[16].CRC32="0x1f9cd270"
-    set bios[16].MD5=06daac977823773a3eea3422fd26a703
-    set bios[17].desc="BIOS for Atari XL/XE OS - Version BB01R2 OS from Atari 800XL and early Atari 65XE/130XE"
-    set bios[17].name=ATARIBAS.ROM
-    set bios[17].CRC32="0x7d684184"
-    set bios[17].MD5=0bac0c6a50104045d902df4503a4c30b
-    set bios[17].desc="BIOS for the BASIC interpreter - Basic Rev. C, Atari BASIC from 800XL and all Atari XE/XEGS, also sold on cartridge"
-    set bios[18].name=ATARIOSA.ROM
-    set bios[18].CRC32=0x72b3fed4
-    set bios[18].MD5=eb1f32f5d9f382db1bbfb8d7f9cb343a
-    set bios[18].desc="BIOS for Atari 400/800 PAL - OS A from PAL Atari 400/800"
-    set bios[19].name=ATARIOSB.ROM
-    set bios[19].CRC32=0x3e28a1fe
-    set bios[19].MD5=a3e8d617c95d08031fe1b20d541434b2
-    set bios[19].desc="BIOS for Atari 400/800 NTSC - PCXFormer hack ROM, based on LINBUG version; a bugfixed NTSC OS B for 400/800"
-    set bios[19].name=5200.rom
-    set bios[19].CRC32=0x4248d3e3
-    set bios[19].MD5=281f20ea4320404ec820fb7ec0693b38
-    set bios[19].desc="BIOS for the Atari 5200 - Original (not Rev. A) BIOS from 4-port and early 2-port 5200"
+    set bios[20].name=ATARIXL.ROM
+    set bios[20].CRC32="0x1f9cd270"
+    set bios[20].MD5=06daac977823773a3eea3422fd26a703
+    set bios[20].desc="BIOS for Atari XL/XE OS - Version BB01R2 OS from Atari 800XL and early Atari 65XE/130XE"
+    set bios[21].name=ATARIBAS.ROM
+    set bios[21].CRC32="0x7d684184"
+    set bios[21].MD5=0bac0c6a50104045d902df4503a4c30b
+    set bios[21].desc="BIOS for the BASIC interpreter - Basic Rev. C, Atari BASIC from 800XL and all Atari XE/XEGS, also sold on cartridge"
+    set bios[22].name=ATARIOSA.ROM
+    set bios[22].CRC32=0x72b3fed4
+    set bios[22].MD5=eb1f32f5d9f382db1bbfb8d7f9cb343a
+    set bios[22].desc="BIOS for Atari 400/800 PAL - OS A from PAL Atari 400/800"
+    set bios[23].name=ATARIOSB.ROM
+    set bios[23].CRC32=0x3e28a1fe
+    set bios[23].MD5=a3e8d617c95d08031fe1b20d541434b2
+    set bios[23].desc="BIOS for Atari 400/800 NTSC - PCXFormer hack ROM, based on LINBUG version; a bugfixed NTSC OS B for 400/800"
+    set bios[24].name=5200.rom
+    set bios[24].CRC32=0x4248d3e3
+    set bios[24].MD5=281f20ea4320404ec820fb7ec0693b38
+    set bios[24].desc="BIOS for the Atari 5200 - Original (not Rev. A) BIOS from 4-port and early 2-port 5200"
 
 :: ATARI 7800
 
-    set bios[16].name=7800 BIOS (U).rom
-    set bios[16].CRC32=
-    set bios[16].MD5=
-    set bios[17].desc="This BIOS is optional if you want the Atari Logo at the beginning of games. Note: if this BIOS is enabled, PAL ROMs will not work so use it accordingly."
+    set bios[25].name=7800 BIOS (U).rom
+    set bios[25].CRC32=
+    set bios[25].MD5=
+    set bios[25].desc="This BIOS is optional if you want the Atari Logo at the beginning of games. Note: if this BIOS is enabled, PAL ROMs will not work so use it accordingly."
 
 
 
