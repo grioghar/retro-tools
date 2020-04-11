@@ -22,6 +22,15 @@ for /F "usebackq delims==. tokens=1-3" %%j in (`set bios[!i!]`) do (
             echo !filelocation! !crc32value!
             )
         )
+        for /f %%A in ('md5.exe "%%y"') do (
+            set md5value="%%A"
+            set filelocation="%%y"
+      
+            if /I !%%k%i%!==!md5value! (
+            echo !filelocation! !md5value!
+            )
+        )
+
     )
 )
 
