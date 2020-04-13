@@ -3,3 +3,5 @@ ffmpeg.exe
 .wget-hsts
 *.exe
 *.log
+*.txt
+logs/

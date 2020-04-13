@@ -9,11 +9,10 @@ set len=73
 
 :: 3DO
 
-    set bios[16].name=panafz10
-    set bios[16].ext=bin
+    set bios[16].name=panafz10.bin
     set bios[16].CRC32=C8C8FF89
     set bios[16].MD5=f47264dd47fe30f73ab3c010015c155b
-    set bios[16].desc="for 3DO emulator"
+    set bios[16].desc="for 3DO emulator."
 
 :: Amiga
 
@@ -33,23 +32,23 @@ set len=73
 :: ATARI 800/5200
 
     set bios[20].name=ATARIXL.ROM
-    set bios[20].CRC32=1f9cd270
+    set bios[20].CRC32=0x1f9cd270
     set bios[20].MD5=06daac977823773a3eea3422fd26a703
-    set bios[20].desc="BIOS for Atari XL/XE OS - Version BB01R2 OS from Atari 80L and early Atari 65XE/13E"
+    set bios[20].desc="BIOS for Atari XL/XE OS - Version BB01R2 OS from Atari 800XL and early Atari 65XE/130XE"
     set bios[21].name=ATARIBAS.ROM
-    set bios[21].CRC32=7d684184
+    set bios[21].CRC32=0x7d684184
     set bios[21].MD5=0bac0c6a50104045d902df4503a4c30b
-    set bios[21].desc="BIOS for the BASIC interpreter - Basic Rev. C, Atari BASIC from 80L and all Atari XE/XEGS, also sold on cartridge"
+    set bios[21].desc="BIOS for the BASIC interpreter - Basic Rev. C, Atari BASIC from 800XL and all Atari XE/XEGS, also sold on cartridge"
     set bios[22].name=ATARIOSA.ROM
-    set bios[22].CRC32=72b3fed4
+    set bios[22].CRC32=0x72b3fed4
     set bios[22].MD5=eb1f32f5d9f382db1bbfb8d7f9cb343a
     set bios[22].desc="BIOS for Atari 400/800 PAL - OS A from PAL Atari 400/800"
     set bios[23].name=ATARIOSB.ROM
-    set bios[23].CRC32=3e28a1fe
+    set bios[23].CRC32=0x3e28a1fe
     set bios[23].MD5=a3e8d617c95d08031fe1b20d541434b2
     set bios[23].desc="BIOS for Atari 400/800 NTSC - PCXFormer hack ROM, based on LINBUG version; a bugfixed NTSC OS B for 400/800"
     set bios[24].name=5200.rom
-    set bios[24].CRC32=4248d3e3
+    set bios[24].CRC32=0x4248d3e3
     set bios[24].MD5=281f20ea4320404ec820fb7ec0693b38
     set bios[24].desc="BIOS for the Atari 5200 - Original (not Rev. A) BIOS from 4-port and early 2-port 5200"
 
@@ -63,7 +62,7 @@ set len=73
 :: ATARI LYNX
 
     set bios[26].name=lynxboot.img
-    set bios[26].CRC32=0d973c9d
+    set bios[26].CRC32=0x0d973c9d
     set bios[26].MD5=fcd403db69f54290b51035d82f835e7b
     set bios[26].desc="Only for lr-beetle-lynx."
 
@@ -91,46 +90,46 @@ set len=73
 :: Dreamcast
 
     set bios[0].name=dc_boot.bin
-    set bios[0].CRC32=89f2b1a1
+    set bios[0].CRC32=0x89f2b1a1
     set bios[0].MD5=e10c53c2f8b90bab96ead2d368858623 
     set bios[0].desc="Region: World"
     set bios[1].name=dc_flash.bin
-    set bios[1].CRC32=c611b498
+    set bios[1].CRC32=0xc611b498
     set bios[1].MD5=0a93f7940c455905bea6e392dfde92a4 
     set bios[1].desc="Region: USA"
     set bios[2].name=dc_flash.bin
-    set bios[2].CRC32=b7e5aeeb
+    set bios[2].CRC32=0xb7e5aeeb
     set bios[2].MD5=23df18aa53c8b30784cd9a84e061d008 
     set bios[2].desc="Region: Europe"
     set bios[3].name=dc_flash.bin
-    set bios[3].CRC32=5f92bf76
+    set bios[3].CRC32=0x5f92bf76
     set bios[3].MD5=69c036adfca4ebea0b0c6fa4acfc8538
     set bios[3].desc="Region: Japan"
 
 :: Hacked Dreamcast BIOS
 
     set bios[4].name=dc_boot.bin
-    set bios[4].CRC32=61d5613f
+    set bios[4].CRC32=0x61d5613f
     set bios[4].MD5=d407fcf70b56acb84b8c77c93b0e5327
     set bios[4].desc="Hack - Region-free"
     set bios[5].name=dc_flash.bin
-    set bios[5].CRC32=e0d202a2
+    set bios[5].CRC32=0xe0d202a2
     set bios[5].MD5=93a9766f14159b403178ac77417c6b68
     set bios[5].desc="Hack - Region-free"
     set bios[6].name=dc_boot.bin
-    set bios[6].CRC32=558f456e
+    set bios[6].CRC32=0x558f456e
     set bios[6].MD5=d552d8b577faa079e580659cd3517f86
     set bios[6].desc="atreyu187 Hack - Region-free"
     set bios[7].name=dc_flash.bin
-    set bios[7].CRC32=bda0e9aa
+    set bios[7].CRC32=0xbda0e9aa
     set bios[7].MD5=74e3f69c2bb92bc1fc5d9a53biosf6ffe2
     set bios[7].desc="atreyu187 Hack - Region-free"
     set bios[8].name=naomi.zip
-    set bios[8].CRC32=c295a8c2
+    set bios[8].CRC32=0xc295a8c2
     set bios[8].MD5=eb4099aeb42ef089cfe94f8fe95e51f6
     set bios[8].desc="NAOMI BIOS - Region: World"
     set bios[9].name=awbios.zip
-    set bios[9].CRC32=ab628024
+    set bios[9].CRC32=0xab628024
     set bios[9].MD5=0ec5ae5b5a5c4959fa8b43fcf8687f7c
     set bios[9].desc="Atomiswave BIOS - Region: World"
 
@@ -142,33 +141,33 @@ set len=73
 :: Famicom
 
     set bios[31].name=disksys.rom
-    set bios[31].CRC32=5e607dcf
+    set bios[31].CRC32=0x5e607dcf
     set bios[31].MD5=ca30b50f880eb660a320674ed365ef7a
     set bios[31].desc="[BIOS] Family Computer Disk System (Japan) (Rev 1)"
 
 :: Game Boy Advance
 
     set bios[32].name=gba_bios.bin
-    set bios[32].CRC32=81977335
+    set bios[32].CRC32=0x81977335
     set bios[32].MD5=a860e8c0b6d573d191e4ec7db1b1e4f6
     set bios[32].desc="[BIOS] Game Boy Advance (World).gba"
 
 :: Game Boy/Super Game Boy
 
     set bios[32].name=gb_bios.bin
-    set bios[32].CRC32=59C8598E
+    set bios[32].CRC32=0x59C8598E
     set bios[32].MD5=32fbbd84168d3482956eb3c5051637f5
     set bios[32].desc="[BIOS] Nintendo Game Boy Boot ROM (World) (Rev 1).gb. lr-gambatte can load external BIOS for Game Boy (gb_bios.bin)."
 
     set bios[33].name=sgb_bios.bin
-    set bios[33].CRC32=EC8A83B9
+    set bios[33].CRC32=0xEC8A83B9
     set bios[33].MD5=d574d4f9c12f305074798f54c091a8b4
     set bios[33].desc="SGB-CPU (World) (Enhancement Chip).bin. lr-mgba can load external BIOS for Game Boy (gb_bios.bin) and Super Game Boy (sgb_bios.bin)."
 
 :: Game Boy Color
 
     set bios[34].name=gbc_bios.bin
-    set bios[34].CRC32=41884E46
+    set bios[34].CRC32=0x41884E46
     set bios[34].MD5=dbfce9db9deaa2567f6a84fde55f9680
     set bios[34].desc="[BIOS] Nintendo Game Boy Color Boot ROM (World).gbc. lr-mgba can load external BIOS for Game Boy Color(gbc_bios.bin) and Super Game Boy (sgb_bios.bin)."
 
@@ -280,7 +279,7 @@ set len=73
 :: Nintendo Entertainment System (NES)
 
     set bios[53].name=disksys.rom
-    set bios[53].CRC32=5e607dcf
+    set bios[53].CRC32=0x5e607dcf
     set bios[53].MD5=ca30b50f880eb660a320674ed365ef7a
     set bios[53].desc="[BIOS] Family Computer Disk System (Japan) (Rev 1)"
 
@@ -292,111 +291,105 @@ set len=73
 :: PC-8800
 
     set bios[55].name=N88.ROM
-    set bios[55].CRC32=A0FC0473
+    set bios[55].CRC32=0xA0FC0473
     set bios[55].MD5=
     set bios[55].desc=""
     set bios[56].name=N88SUB.ROM
-    set bios[56].CRC32=2158D307
+    set bios[56].CRC32=0x2158D307
     set bios[56].MD5=
     set bios[56].desc=""
     set bios[57].name=N88N.ROM
-    set bios[57].CRC32=5e607dcf
+    set bios[57].CRC32=0x5e607dcf
     set bios[57].MD5=
     set bios[57].desc=""
     set bios[58].name=N88EXT0.ROM
-    set bios[58].CRC32=710A63EC
+    set bios[58].CRC32=0x710A63EC
     set bios[58].MD5=
     set bios[58].desc=""
     set bios[59].name=N88EXT1.ROM
-    set bios[59].CRC32=C0BD2AA6
+    set bios[59].CRC32=0xC0BD2AA6
     set bios[59].MD5=
     set bios[59].desc=""
     set bios[60].name=N88EXT2.ROM
-    set bios[60].CRC32=AF2B6EFA
+    set bios[60].CRC32=0xAF2B6EFA
     set bios[60].MD5=
     set bios[60].desc=""
     set bios[61].name=N88EXT3.ROM
-    set bios[61].CRC32=7713C519
+    set bios[61].CRC32=0x7713C519
     set bios[61].MD5=
     set bios[61].desc=""
     set bios[62].name=N88KNJ1.ROM
-    set bios[62].CRC32=6178BD43
+    set bios[62].CRC32=0x6178BD43
     set bios[62].MD5=
     set bios[62].desc=""
     set bios[63].name=N88KNJ2.ROM
-    set bios[63].CRC32=154803CC
+    set bios[63].CRC32=0x154803CC
     set bios[63].MD5=
     set bios[63].desc=""
 
 :: PC-9800
 
     set bios[64].name=2608_BD.WAV
-    set bios[64].CRC32=FCB60C01
+    set bios[64].CRC32=0xFCB60C01
     set bios[64].MD5=29AAD51CD243C8E449D311D14613F0B1
     set bios[64].desc="for the PC-9800"
     set bios[65].name=2608_HH.WAV
-    set bios[65].CRC32=7D6D9C4E
+    set bios[65].CRC32=0x7D6D9C4E
     set bios[65].MD5=59A009EE444318BD57D99A19068731E4
     set bios[65].desc="for the PC-9800"
     set bios[66].name=2608_RIM.WAV
-    set bios[66].CRC32=8518A388
+    set bios[66].CRC32=0x8518A388
     set bios[66].MD5=943290D1C5C6AE6295BD02BE4411C7C0
     set bios[66].desc="for the PC-9800"
     set bios[67].name=2608_SD.WAV
-    set bios[67].CRC32=C977FDB8
+    set bios[67].CRC32=0xC977FDB8
     set bios[67].MD5=C99156118789B6CBA662C864EBADC62E
     set bios[67].desc="for the PC-9800"
     set bios[68].name=2608_TOM.WAV
-    set bios[68].CRC32=5E8AB475
+    set bios[68].CRC32=0x5E8AB475
     set bios[68].MD5=C321A6835B26AD125B2EB78BE56394A4
     set bios[68].desc="for the PC-9800"
     set bios[69].name=2608_TOP.WAV
-    set bios[69].CRC32=CEFA9F76
+    set bios[69].CRC32=0xCEFA9F76
     set bios[69].MD5=9E73FF2345236EBE72F7A937E477F0BD
     set bios[69].desc="for the PC-9800"
     set bios[70].name=BIOS.ROM
-    set bios[70].CRC32=76AFFD90
+    set bios[70].CRC32=0x76AFFD90
     set bios[70].MD5=E246140DEC5124C5E404869A84CAEFCE
     set bios[70].desc="for the PC-9800"
     set bios[71].name=FONT.ROM
-    set bios[71].CRC32=CD6DFABE
+    set bios[71].CRC32=0xCD6DFABE
     set bios[71].MD5=2AF6179D7DE4893EA0B705C00E9A98D6
     set bios[71].desc="for the PC-9800"
     set bios[72].name=SOUND.ROM
-    set bios[72].CRC32=A21EF796
+    set bios[72].CRC32=0xA21EF796
     set bios[72].MD5=CAF90F22197AED6F14C471C21E64658D
     set bios[72].desc="for the PC-9800"
     set bios[73].name=ITF.ROM
-    set bios[73].CRC32=273E9E88
+    set bios[73].CRC32=0x273E9E88
     set bios[73].MD5=E9FC3890963B12CF15D0A2EEA5815B72
     set bios[73].desc="for the PC-9800"
 
 :: Playstation 1
 
     set bios[10].name=scph101.bin
-    set bios[10].CRC32=171BDCEC
+    set bios[10].CRC32=0x171BDCEC
     set bios[10].MD5=6E3735FF4C7DC899EE98981385F6F3D0
-    set bios[10].desc="For lr-pcsx-rearmed - psone-45a.bin"
     set bios[11].name=scph7001.bin
-    set bios[11].CRC32=502224B6
+    set bios[11].CRC32=0x502224B6
     set bios[11].MD5=1E68C231D0896B7EADCAD1D7D8E76129
-    set bios[11].desc="For lr-pcsx-rearmed - ps-41a.bin"
     set bios[12].name=scph5501.bin
-    set bios[12].CRC32=8D8CB7E4
+    set bios[12].CRC32=0x8D8CB7E4
     set bios[12].MD5=490F666E1AFB15B7362B406ED1CEA246
-    set bios[12].desc="For lr-pcsx-rearmed & lr-beetle-psx - ps-30a.bin"
     set bios[13].name=scph1001.bin
-    set bios[13].CRC32=37157331
+    set bios[13].CRC32=0x37157331
     set bios[13].MD5=924E392ED05558FFDB115408C263DCCF
-    set bios[13].desc="For PCSX-ReARMed & lr-pcsx-rearmed - Consider renaming scph1001.bin to SCPH1001.BIN instead of having two copies of the same BIOS."
     set bios[14].name=scph5500.bin
-    set bios[14].CRC32=FF3EEB8C
+    set bios[14].CRC32=0xFF3EEB8C
     set bios[14].MD5=8DD7D5296A650FAC7319BCE665A6A53C
-    set bios[14].desc="For lr-beetle-psx - ps-30j"
     set bios[15].name=scph5502.bin
-    set bios[15].CRC32=D786F0B9
+    set bios[15].CRC32=0xD786F0B9
     set bios[15].MD5=32736F17079D0B2B7024407C39BD3050
-    set bios[15].desc="For lr-beetle-psx - ps-30e"
 
 :: Sega Saturn
 
