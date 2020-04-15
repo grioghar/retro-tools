@@ -1,0 +1,1 @@
+This is a readme file that app.use(express(static)) will serve. 
