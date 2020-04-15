@@ -1,18 +1,20 @@
 @echo off
 
+REM Set the headertitle, headerdesc (description), and the headerlog (which should be the filename)
+REM These variables are passed to log.bat for creating log files & header.bat for the header to each file
 call conf\config.bat
 call conf\bios-checksums.bat
-call conf\log.bat
-
 @echo off
 
 set headertitle="BIOS Checker"
 set headerdesc="Checks CRC32/MD5 of BIOS files"
-set headerlog=%log%
+set headerlog=%0
 
+call conf\log.bat
 call conf\header.bat 
 
-echo retro-tools v.%version% BIOS Checker - %DATE%-%TIME%: > %log%
+
+echo retro-tools v.%version% %headertitle% - %DATE%-%TIME%: > %log%
 
 setlocal enableDelayedExpansion
 

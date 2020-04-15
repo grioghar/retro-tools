@@ -4,7 +4,7 @@ REM Download wget using Windows BITSadmin
 REM bitsadmin /addfile retro-tools https://eternallybored.org/misc/wget/1.20.3/64/wget.exe wget.exe
 REM bitsadmin /SetCredentials thisissomejobname Server BASIC somehttpuser somehttppassword
 
-call config.bat
+call ../conf/config.bat
 
 :: The retro-tools equivalent of using IE to download FF
 :: Download wget to use going forward instead of bitsadmin
@@ -17,7 +17,7 @@ if exist wget.exe (
 		)
 
 :: create the logs folders
-mkdir logs
+mkdir ../logs
 
 :: Download wtee.exe from Google
 if exist wtee.exe (
