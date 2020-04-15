@@ -3,5 +3,8 @@ ffmpeg.exe
 .wget-hsts
 *.exe
 *.log
+<<<<<<< HEAD
 *.txt
 logs/
+=======
+>>>>>>> master

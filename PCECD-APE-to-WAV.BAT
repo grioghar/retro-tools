@@ -4,7 +4,11 @@ REM PC Engine CD ROMs can come with .cue/.iso/.ape files instead of the .wav fil
 REM This reads the PC Engine CD folder passed to it at command line, scans through all the folders, converting the .ape files to .wav
 REM Later versions of this will also delete the .ape files, though it will give a choice.
 
+<<<<<<< HEAD
 call conf\config.bat
+=======
+call config.bat
+>>>>>>> master
 setlocal enabledelayedexpansion
 
 set /a s += 1 
@@ -47,7 +51,11 @@ if %s% == 1 (
 		echo %%~dpi%%~ni.wav exists.
 	) else (
 		echo Converting %%~dpi%%~ni.wav...
+<<<<<<< HEAD
 		bin\ffmpeg.exe -hide_banner -loglevel panic -y -i "%%i" "%%~dpi%%~ni.wav"
+=======
+		ffmpeg.exe -hide_banner -loglevel panic -y -i "%%i" "%%~dpi%%~ni.wav"
+>>>>>>> master
 		set /a counter += 1
 		echo !counter! files converted.
 		)
