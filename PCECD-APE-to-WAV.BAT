@@ -47,7 +47,7 @@ if %s% == 1 (
 		echo %%~dpi%%~ni.wav exists.
 	) else (
 		echo Converting %%~dpi%%~ni.wav...
-		ffmpeg.exe -hide_banner -loglevel panic -y -i "%%i" "%%~dpi%%~ni.wav"
+		bin\ffmpeg.exe -hide_banner -loglevel panic -y -i "%%i" "%%~dpi%%~ni.wav"
 		set /a counter += 1
 		echo !counter! files converted.
 		)
