@@ -4,33 +4,23 @@ REM PC Engine CD ROMs can come with .cue/.iso/.ape files instead of the .wav fil
 REM This reads the PC Engine CD folder passed to it at command line, scans through all the folders, converting the .ape files to .wav
 REM Later versions of this will also delete the .ape files, though it will give a choice.
 
-<<<<<<< HEAD
 call conf\config.bat
-=======
-call config.bat
->>>>>>> master
+@echo off
+
+set headertitle="PC Engine/TurboGraphix 16 .ape -> .wav"
+set headerdesc="Converts .ape files to .wav for later conversion to .chd"
+set headerlog=%0
+
+call conf\log.bat
+echo retro-tools v.%version% %headertitle% - %DATE%-%TIME%: > %log%
+
+call conf\header.bat 
 setlocal enabledelayedexpansion
 
-set /a s += 1 
-set /a logcount += 0
-for /r %~dp0 %%l in (*.log) do (
-	set /a logcount += 1
-	)
-
-if %s% == 1 (
-	%~0 %1 2>&1 | wtee "logs\%~n0 %logcount%.log"
-		)
-	
 :main 
-	
-	cls
-	echo ---------------------------------------------
-	echo --          retro-tools v.%version%          
-	echo --       PC Engine / TurboGraphix 16       
-	echo --             .APE ^=^> .WAV                
-	echo --               Converter                 
+
 	echo -- ROMs location - [%1]
-	set /p p=^(c^)onvert, ^(d^)elete .wavs, or e^(x^)it: 
+	set /p p=-- ^(c^)onvert, ^(d^)elete .wavs, or e^(x^)it: 
 
 	if "%p%" == "d" (
 		set roms=%1
@@ -49,18 +39,17 @@ if %s% == 1 (
 	for /r %roms% %%i in (*.ape) do (
 		if exist "%%~dpi%%~ni.wav" (
 		echo %%~dpi%%~ni.wav exists.
+		echo %DATE% %TIME% - [INFO] - %%~dpi%%~ni.wav exists. > %log%
 	) else (
 		echo Converting %%~dpi%%~ni.wav...
-<<<<<<< HEAD
-		bin\ffmpeg.exe -hide_banner -loglevel panic -y -i "%%i" "%%~dpi%%~ni.wav"
-=======
-		ffmpeg.exe -hide_banner -loglevel panic -y -i "%%i" "%%~dpi%%~ni.wav"
->>>>>>> master
+		echo %DATE% %TIME% - [INFO] - Converting %%~dpi%%~ni.wav... > %log%
+		bin\ffmpeg.exe -hide_banner -loglevel panic -y -i "%%i" "%%~dpi%%~ni.wav" > %log%
 		set /a counter += 1
 		echo !counter! files converted.
 		)
 	)
 	echo Converted %counter% files!
+	echo %DATE% %TIME% - [INFO] - Converted %counter% files! > %log%
 	echo Press any key to go to main menu.
 	pause
 	goto main
@@ -69,12 +58,16 @@ if %s% == 1 (
 	for /r %roms% %%i in (*.ape) do (
 		if exist "%%~dpi%%~ni.wav" (
 			del "%%~dpi%%~ni.wav"
-			echo Deleting %%~dpi%%~ni.wav...
+			echo Deleted %%~dpi%%~ni.wav...
+			echo %DATE% %TIME% - [INFO] - Deleted %%~dpi%%~ni.wav... > %log%
 			set /a counter += 1
 			echo !counter! files deleted.
+			echo %DATE% %TIME% - [INFO] - !counter! files deleted. > %log%
 		) else ( echo Checking %%~dpi... )
 	)
 	echo Converted %counter% files!
+	echo %DATE% %TIME% - [INFO] - Converted %counter% files! > %log%
+
 	echo Press any key to go to main menu.
 	pause
 	goto main
