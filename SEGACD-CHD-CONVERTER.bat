@@ -4,8 +4,8 @@ REM timeout /t 10
 call conf\config.bat
 @echo off
 
-set headertitle="PSX .cue to .chd"
-set headerdesc="Converts Playstation 1 .cue and .bin files to an easy-to-manage .chd"
+set headertitle="SEGACD Converter"
+set headerdesc="Converts SegaCD files to an easy-to-manage .chd"
 set headerlog=%0
 
 call conf\log.bat
@@ -36,16 +36,16 @@ set "b="
 :dothedancefandango
 :: Handle compressed files
 for /r %1 %%z in (*.7z, *.zip, *.rar) DO ( 
-	if exist "%rpipsx%\%%~nz.chd" (
-		echo  %%~nz.chd exists on %rpipsx%
+	if exist "%rpisegacd%\%%~nz.chd" (
+		echo  %%~nz.chd exists on %rpisegacd%
 		echo  !DATE! !TIME! - [INFO] - %%~nz.chd available >> %log%
 		) else (
 		7z x -y "%%z" -o%1
 		bin\chdman.exe createcd -i "%%~dz%%~pz%%~nz%%~xz" -o "%%~dz%%~pz%%~nz.chd" --force
-		echo Copying %%~nz.chd to %rpipsx%
-		move /y "%%~dz%%~pz%%~nz.chd" %rpipsx%
-		if exist "%rpipsx%\%%~nz.chd" ( echo !DATE! !TIME! - [INFO] - Copied %%~nz.chd to %rpipsx% >> %log% )
-		if not exist "%rpipsx%\%%~nz.chd" ( echo !DATE! !TIME! - [ERROR] - Copy failed: %%~nz.chd to %rpipsx% >> %log% )
+		echo Copying %%~nz.chd to %rpisegacd%
+		move /y "%%~dz%%~pz%%~nz.chd" %rpisegacd%
+		if exist "%rpisegacd%\%%~nz.chd" ( echo !DATE! !TIME! - [INFO] - Copied %%~nz.chd to %rpisegacd% >> %log% )
+		if not exist "%rpisegacd%\%%~nz.chd" ( echo !DATE! !TIME! - [ERROR] - Copy failed: %%~nz.chd to %rpisegacd% >> %log% )
 			for /r %1 %%b in (*.cue, *.bin) DO (
 				del %%b
 				echo Deleted %%b
@@ -56,14 +56,14 @@ for /r %1 %%z in (*.7z, *.zip, *.rar) DO (
 
 :: Handle uncompressed files
 for /r %1 %%z in (*.cue, *.iso) DO (
-	if exist "%rpipsx%\%%~nz.chd" (
-		 echo %%~nz.chd exists on %rpipsx%
+	if exist "%rpisegacd%\%%~nz.chd" (
+		 echo %%~nz.chd exists on %rpisegacd%
 		 echo !DATE! !TIME! - [INFO] - %%~nz.chd available >> %log%
 		) else (
 		bin\chdman.exe createcd -i "%%~dz%%~pz%%~nz%%~xz" -o "%%~dz%%~pz%%~nz.chd" --force
-		echo Copying %%~nz.chd to %rpipsx%  
-		move /y "%%~dz%%~pz%%~nz.chd" %rpipsx%
-		if exist "%rpipsx%\%%~nz.chd" ( echo !DATE! !TIME! - [INFO] - Copied %%~nz.chd to %rpipsx% >> %log% )
-		if not exist "%rpipsx%\%%~nz.chd" ( echo !DATE! !TIME! - [ERROR] - Copy failed: %%~nz.chd to %rpipsx% >> %log% )
+		echo Copying %%~nz.chd to %rpisegacd%  
+		move /y "%%~dz%%~pz%%~nz.chd" %rpisegacd%
+		if exist "%rpisegacd%\%%~nz.chd" ( echo !DATE! !TIME! - [INFO] - Copied %%~nz.chd to %rpisegacd% >> %log% )
+		if not exist "%rpisegacd%\%%~nz.chd" ( echo !DATE! !TIME! - [ERROR] - Copy failed: %%~nz.chd to %rpisegacd% >> %log% )
 		)
 	)

@@ -3,8 +3,10 @@ ffmpeg.exe
 .wget-hsts
 *.exe
 *.log
-<<<<<<< HEAD
 *.txt
+*.old
 logs/
-=======
->>>>>>> master
+Documentation/
+nodejs/
+Bash/
+
