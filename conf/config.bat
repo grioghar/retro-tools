@@ -14,7 +14,7 @@ set rpibios="\\%rpiip%\bios"
 set "PATH=%PATH%;C:\Program Files\7-Zip\"
 
 :: conf\header.bat
-set version=0.1a
+set version=0.1.0
 set headertitle="You forgot to set this"
 set headerdesc="hey, doofus - set this in your file"
 set headerlog="This will probably be %%log%%, but check."
