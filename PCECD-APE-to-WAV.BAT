@@ -14,10 +14,11 @@ set headerlog=%0
 call conf\log.bat
 echo retro-tools v.%version% %headertitle% - %DATE%-%TIME%: > %log%
 
-call conf\header.bat 
+call conf\header.bat
 setlocal enabledelayedexpansion
+set /a counter=0
 
-:main 
+:main
 
 	echo -- ROMs location - [%1]
 	set /p p=-- ^(c^)onvert, ^(d^)elete .wavs, or e^(x^)it: 
@@ -35,38 +36,40 @@ setlocal enabledelayedexpansion
 		goto dothedancefandango	
 	) 
 	
-:dothedancefandango 
+:dothedancefandango
+	set /a counter=0
 	for /r %roms% %%i in (*.ape) do (
 		if exist "%%~dpi%%~ni.wav" (
 		echo %%~dpi%%~ni.wav exists.
-		echo %DATE% %TIME% - [INFO] - %%~dpi%%~ni.wav exists. > %log%
+		echo %DATE% %TIME% - [INFO] - %%~dpi%%~ni.wav exists. >> %log%
 	) else (
 		echo Converting %%~dpi%%~ni.wav...
-		echo %DATE% %TIME% - [INFO] - Converting %%~dpi%%~ni.wav... > %log%
-		bin\ffmpeg.exe -hide_banner -loglevel panic -y -i "%%i" "%%~dpi%%~ni.wav" > %log%
+		echo %DATE% %TIME% - [INFO] - Converting %%~dpi%%~ni.wav... >> %log%
+		bin\ffmpeg.exe -hide_banner -loglevel panic -y -i "%%i" "%%~dpi%%~ni.wav"
 		set /a counter += 1
 		echo !counter! files converted.
 		)
 	)
 	echo Converted %counter% files!
-	echo %DATE% %TIME% - [INFO] - Converted %counter% files! > %log%
+	echo %DATE% %TIME% - [INFO] - Converted %counter% files! >> %log%
 	echo Press any key to go to main menu.
 	pause
 	goto main
 	
 :deletethewavs
+	set /a counter=0
 	for /r %roms% %%i in (*.ape) do (
 		if exist "%%~dpi%%~ni.wav" (
 			del "%%~dpi%%~ni.wav"
 			echo Deleted %%~dpi%%~ni.wav...
-			echo %DATE% %TIME% - [INFO] - Deleted %%~dpi%%~ni.wav... > %log%
+			echo %DATE% %TIME% - [INFO] - Deleted %%~dpi%%~ni.wav... >> %log%
 			set /a counter += 1
 			echo !counter! files deleted.
-			echo %DATE% %TIME% - [INFO] - !counter! files deleted. > %log%
+			echo %DATE% %TIME% - [INFO] - !counter! files deleted. >> %log%
 		) else ( echo Checking %%~dpi... )
 	)
-	echo Converted %counter% files!
-	echo %DATE% %TIME% - [INFO] - Converted %counter% files! > %log%
+	echo Deleted %counter% files!
+	echo %DATE% %TIME% - [INFO] - Deleted %counter% files! >> %log%
 
 	echo Press any key to go to main menu.
 	pause

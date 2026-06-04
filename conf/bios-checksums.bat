@@ -6,7 +6,7 @@
 
 :: Global variables
 set i=0
-set len=101
+set len=102
 
 :: 3DO
 
@@ -146,7 +146,8 @@ set len=101
     set bios[7].name=dc_flash.bin
     set bios[7].ext=bin
     set bios[7].CRC32=BDA0E9AA
-    set bios[7].MD5=74e3f69c2bb92bc1fc5d9a53biosf6ffe2
+    REM Original MD5 was corrupted (contained literal "bios" and was not 32 hex chars: 74e3f69c2bb92bc1fc5d9a53biosf6ffe2). Blanked; needs re-verification from the actual file.
+    set bios[7].MD5=
     set bios[7].desc="Dreamcast - atreyu187 Hack - Region-free"
     set bios[8].name=naomi.zip
     set bios[8].ext=zip
@@ -213,6 +214,7 @@ set len=101
 
 :: Intellivision
 
+    REM NOTE: MD5 below is identical to bios[30] (bios.gg) - looks like a copy/paste error; verify against the real file.
     set bios[35].name=exec.bin
     set bios[35].ext=bin
     set bios[35].CRC32=
@@ -321,7 +323,7 @@ set len=101
     set bios[51].MD5=
     set bios[51].desc="lr-desmume can load BIOS file: bios7,bin, bios9,bin & firmware,bin"
     set bios[52].name=firmware.bin
-    set bios[50].ext=bin   
+    set bios[52].ext=bin
     set bios[52].CRC32=
     set bios[52].MD5=
     set bios[52].desc="lr-desmume can load BIOS file: bios7,bin, bios9,bin & firmware,bin"
@@ -529,11 +531,11 @@ set len=101
     set bios[85].CRC32=224b752c
     set bios[85].MD5=85ec9ca47d8f6807718151cbcca8b964
     set bios[85].desc="Sega Saturn - for lr-beetle-saturn"
-    set bios[85].name=mpr-17933.bin
-    set bios[85].ext=bin
-    set bios[85].CRC32=4AFCF0FA
-    set bios[85].MD5=3240872C70984B6CBFDA1586CAB68DBE
-    set bios[85].desc="Sega Saturn - for lr-beetle-saturn"    
+    set bios[102].name=mpr-17933.bin
+    set bios[102].ext=bin
+    set bios[102].CRC32=4AFCF0FA
+    set bios[102].MD5=3240872C70984B6CBFDA1586CAB68DBE
+    set bios[102].desc="Sega Saturn - for lr-beetle-saturn"
 
 :: Sharp-X1
 

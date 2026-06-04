@@ -35,7 +35,7 @@ REM echo "CRC32: !crc32value!" + "MD5: !md5value!"
 )
 
 :readbioschecksums
-    if %i% NEQ %len% (
+    if %i% LEQ %len% (
         for /F "usebackq delims==. tokens=1-3" %%j in (`set bios[!i!]`) do (
             set %%k!i!=%%l
             set name=!name%i%!
@@ -47,7 +47,7 @@ REM echo "CRC32: !crc32value!" + "MD5: !md5value!"
 
             REM Something is amiss here. Trying to use the periods in the variables get swallowed up in the delimiter. Fuck.
 
-            if !%%k%i%!==!crc32value! (
+            if /I !%%k%i%!==!crc32value! (
                 echo ------------------------------------------------------------------------------------------------------------------------------
                 echo Match found: Filename: !file! - Reference name: !name!.!extension! -^> !crc32! ^<- !md5! 
                 echo Description: !description!
