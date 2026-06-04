@@ -35,22 +35,24 @@ set "b="
 
 :dothedancefandango
 :: Handle compressed files
-for /r %1 %%z in (*.7z, *.zip, *.rar) DO ( 
-	if exist "%rpipdc%\%%~nz.chd" (
-		echo  %%~nz.chd exists on %rpipdc%
+for /r %1 %%z in (*.7z, *.zip, *.rar) DO (
+	if exist "%rpidc%\%%~nz.chd" (
+		echo  %%~nz.chd exists on %rpidc%
 		echo  !DATE! !TIME! - [INFO] - %%~nz.chd available >> %log%
 		) else (
 		7z x -y "%%z" -o%1
 		bin\chdman.exe createcd -i "%%~dz%%~pz%%~nz%%~xz" -o "%%~dz%%~pz%%~nz.chd" --force
-		echo Copying %%~nz.chd to %rpipdc%
-		move /y "%%~dz%%~pz%%~nz.chd" %rpipdc%
-		if exist "%rpipdc%\%%~nz.chd" ( echo !DATE! !TIME! - [INFO] - Copied %%~nz.chd to %rpidc% >> %log% )
-		if not exist "%rpipdc%\%%~nz.chd" ( echo !DATE! !TIME! - [ERROR] - Copy failed: %%~nz.chd to %rpidc% >> %log% )
+		echo Copying %%~nz.chd to %rpidc%
+		move /y "%%~dz%%~pz%%~nz.chd" "%rpidc%"
+		if exist "%rpidc%\%%~nz.chd" ( echo !DATE! !TIME! - [INFO] - Copied %%~nz.chd to %rpidc% >> %log% )
+		if not exist "%rpidc%\%%~nz.chd" ( echo !DATE! !TIME! - [ERROR] - Copy failed: %%~nz.chd to %rpidc% >> %log% )
+		if exist "%rpidc%\%%~nz.chd" (
 			for /r %1 %%b in (*.cue, *.bin) DO (
 				del %%b
 				echo Deleted %%b
 				set "b="
 			)
+		)
 		)
 	)
 
@@ -61,9 +63,9 @@ for /r %1 %%z in (*.cue, *.gdi) DO (
 		 echo !DATE! !TIME! - [INFO] - %%~nz.chd available >> %log%
 		) else (
 		bin\chdman.exe createcd -i "%%~dz%%~pz%%~nz%%~xz" -o "%%~dz%%~pz%%~nz.chd" --force
-		echo Copying %%~nz.chd to %rpidc%  
-		move /y "%%~dz%%~pz%%~nz.chd" %rpidc%
-		if exist "%rpipdc%\%%~nz.chd" ( echo !DATE! !TIME! - [INFO] - Copied %%~nz.chd to %rpipdc% >> %log% )
-		if not exist "%rpipdc%\%%~nz.chd" ( echo !DATE! !TIME! - [ERROR] - Copy failed: %%~nz.chd to %rpipdc% >> %log% )
+		echo Copying %%~nz.chd to %rpidc%
+		move /y "%%~dz%%~pz%%~nz.chd" "%rpidc%"
+		if exist "%rpidc%\%%~nz.chd" ( echo !DATE! !TIME! - [INFO] - Copied %%~nz.chd to %rpidc% >> %log% )
+		if not exist "%rpidc%\%%~nz.chd" ( echo !DATE! !TIME! - [ERROR] - Copy failed: %%~nz.chd to %rpidc% >> %log% )
 		)
 	)

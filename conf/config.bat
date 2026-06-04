@@ -6,13 +6,15 @@
 
 set rpi=R:
 set rpiip=10.0.0.20
+REM rpiusername/rpipassword are currently UNUSED by the scripts (tools connect
+REM via the mapped drive / UNC path). Do NOT commit real credentials here.
 set rpiusername="Username (default is 'pi')"
 set rpipassword="Password (default is 'raspberry')"
-set rpibios="%rpiip%\bios"
+set rpibios="\\%rpiip%\bios"
 set "PATH=%PATH%;C:\Program Files\7-Zip\"
 
 :: conf\header.bat
-set version=0.1a
+set version=0.1.0
 set headertitle="You forgot to set this"
 set headerdesc="hey, doofus - set this in your file"
 set headerlog="This will probably be %%log%%, but check."
@@ -26,7 +28,7 @@ set "p="
 :: DC-CUE-or-GDI-to-CHD.bat
 set rpidc="\\%rpiip%\roms\dreamcast"
 
-:: PSX-CUE-to-CHD.bat
+:: PCECD-CUE-to-CHD.bat
 set rpipce="\\%rpiip%\roms\pcengine"
 
 :: PSX-CUE-to-CHD.bat
