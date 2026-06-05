@@ -1,0 +1,14 @@
+{
+    "_comment": "Local overlay for the controller DB. Entries here win over the vendored gamecontrollerdb.txt. Use 'by_vidpid' (key 'vvvv:pppp' lowercase hex) for USB pads, or 'by_guid' for an exact SDL GUID. 'mapping' is the SDL token:binding list (same syntax as gamecontrollerdb.txt, without the leading guid,name fields).",
+    "_example": {
+        "by_vidpid": {
+            "045e:028e": {
+                "name": "Xbox 360 Controller (override)",
+                "platform": "Linux",
+                "mapping": "a:b0,b:b1,x:b2,y:b3,back:b6,start:b7,guide:b8,leftshoulder:b4,rightshoulder:b5,leftstick:b9,rightstick:b10,dpup:h0.1,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,leftx:a0,lefty:a1,rightx:a3,righty:a4,lefttrigger:a2,righttrigger:a5"
+            }
+        }
+    },
+    "by_vidpid": {},
+    "by_guid": {}
+}
