@@ -24,6 +24,7 @@ PC Engine CD audio tracks.
 | `PCECD-CUE-to-CHD.bat` | Same, for PC Engine CD / TurboGrafx-16 CD. |
 | `SEGACD-CHD-CONVERTER.bat` | Same, for Sega CD / Mega CD. |
 | `PCECD-APE-to-WAV.bat` | Converts `.ape` audio tracks back to `.wav` so PC Engine CD images become playable (and `.chd`-compressible). |
+| `controller-autoconfig/` | Cross-platform module that detects a controller, reads its USB IDs, and auto-generates the emulator input config. See [Controller auto-configure](#controller-auto-configure). |
 
 There are also two helper scripts under `Bash/` meant to run **on the Pi
 itself**, not on Windows (see [Bash helpers](#bash-helpers)).
@@ -173,6 +174,7 @@ retro-tools/
 │  ├─ header.bat              prints the on-screen banner
 │  └─ log.bat                 sets the rotating log filename
 ├─ Bash/                      helper scripts that run ON the Pi
+├─ controller-autoconfig/     cross-platform controller auto-config module
 └─ logs/                      created at setup; per-script run logs
 ```
 
@@ -180,6 +182,32 @@ Every user-facing script follows the same pattern: it `call`s `conf\config.bat`
 for your settings, sets a title/description, then `call`s `conf\log.bat` (which
 picks a rotating log file, 0–4) and `conf\header.bat` (the banner). Logs land in
 `logs/` and rotate so they don't grow unbounded.
+
+---
+
+## Controller auto-configure
+
+A cross-platform module that **detects a connected controller, reads its USB
+vendor/product IDs, looks it up in the community
+[SDL_GameControllerDB](https://github.com/mdqinc/SDL_GameControllerDB), and
+auto-generates the emulator's input config** — so a plugged-in pad just works
+without manual button mapping. The first config target is EmulationStation's
+`es_input.cfg` (which RetroPie then propagates to RetroArch and friends).
+
+It's a pure-Python engine (Windows/Linux/macOS) with thin native detector
+scripts (PowerShell + Bash) for environments where you'd rather not install
+Python on the target.
+
+```bash
+# from the controller-autoconfig/ directory
+python -m retrotools_controller.cli detect           # what's plugged in?
+python -m retrotools_controller.cli configure        # write es_input.cfg
+python -m retrotools_controller.cli list --vid 045e --pid 028e   # preview, no hardware
+```
+
+Full documentation, including the native detectors and the A/B face-button
+layout option, lives in
+[`controller-autoconfig/README.md`](controller-autoconfig/README.md).
 
 ---
 
@@ -209,6 +237,11 @@ Windows:
 
 ## Roadmap
 
+- ✅ **Controller auto-configure** — detect a pad by USB ID and generate its
+  emulator input config (shipped; EmulationStation target — see
+  [`controller-autoconfig/`](controller-autoconfig/)).
+- **More controller targets** — RetroArch autoconfig and standalone emulators
+  (Dolphin/PCSX2/Duckstation) behind the same detect→lookup→translate engine.
 - A config **wizard** to set everything up interactively.
 - A single **menu-driven** entry point instead of one script per system.
 - A **PowerShell** rewrite to replace the bundled download tools with built-in
